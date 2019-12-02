@@ -1,58 +1,48 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package bs-invent-gaz
+/*
+ * Template Name: Главная
  */
-
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
+<?php if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
+}
+?>
+<!DOCTYPE html>
+<html lang="ru_RU">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-invent-gaz' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$bs_invent_gaz_description = get_bloginfo( 'description', 'display' );
-			if ( $bs_invent_gaz_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $bs_invent_gaz_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bs-invent-gaz' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+<header class="main-header">
+    <div class="container">
+        <div class="main-header__content">
+            <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/logo.svg" alt=""></a></div>
+            <div class="sandwitch-wrap">
+                <div class="sandwitch">
+                    <div class="sandwitch__line sandwitch__line--top"></div>
+                    <div class="sandwitch__line sandwitch__line--middle"></div>
+                    <div class="sandwitch__line sandwitch__line--bottom"></div>
+                </div>
+            </div>
+            <ul class="main-menu" id="js-main-menu">
+                <li class="current-menu-item"><a href="about.html"> Despre noi </a></li>
+                <li><a href="products.html"> Produse</a></li>
+                <li><a href="check-page.html"> Contra status </a></li>
+                <li><a href="contacts.html"> Contacte</a></li>
+            </ul>
+            <div class="wpglobus-lang">
+                <div class="list"><a class="wpglobus-selector-link wpglobus-current-language" href="#"><img
+                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ro.png" alt=""><span
+                                class="name"> Rom & acirc;n & abreve;</span><span class="code"> RO</span></a><a
+                            class="wpglobus-selector-link" href="#"><img
+                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ru.png" alt=""><span
+                                class="name">&Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;</span><span class="code"> RU</span></a><a
+                            class="wpglobus-selector-link" href="#"><img
+                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/us.png" alt=""><span
+                                class="name"> English</span><span class="code"> EN</span></a></div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1382,5 +1382,7 @@ textarea {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+/*#masthead {*/
+/*  display: none;*/
+/*}*/
 
-/*# sourceMappingURL=my.css.map */
