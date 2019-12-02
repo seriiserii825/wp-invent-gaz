@@ -3,7 +3,7 @@
  * Template Name: Главная
  */
 ?>
-<?php if (!defined('ABSPATH')) {
+<?php if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
@@ -18,7 +18,9 @@
 <header class="main-header">
     <div class="container">
         <div class="main-header__content">
-            <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/logo.svg" alt=""></a></div>
+            <div class="logo">
+				<?php the_custom_logo(); ?>
+            </div>
             <div class="sandwitch-wrap">
                 <div class="sandwitch">
                     <div class="sandwitch__line sandwitch__line--top"></div>
@@ -33,15 +35,9 @@
                 <li><a href="contacts.html"> Contacte</a></li>
             </ul>
             <div class="wpglobus-lang">
-                <div class="list"><a class="wpglobus-selector-link wpglobus-current-language" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ro.png" alt=""><span
-                                class="name"> Rom & acirc;n & abreve;</span><span class="code"> RO</span></a><a
-                            class="wpglobus-selector-link" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/ru.png" alt=""><span
-                                class="name">&Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;</span><span class="code"> RU</span></a><a
-                            class="wpglobus-selector-link" href="#"><img
-                                src="https://euconsult.md/wp-content/plugins/wpglobus/flags/us.png" alt=""><span
-                                class="name"> English</span><span class="code"> EN</span></a></div>
+				<?php if ( ! dynamic_sidebar( 'language' ) ): ?>
+                    <h3 style="color: red;">Language</h3>
+				<?php endif; ?>
             </div>
         </div>
     </div>
