@@ -11,26 +11,34 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Carbon Fields' ) )
 	                                    ->add_tab( __( 'Contacts' ), array(
-		                                    Field::make( 'text', 'crb_gmail', __( 'gmail' ) )
-		                                         ->set_width( 30 ),
+		                                    Field::make( 'text', 'crb_phone_1', __( 'phone_1' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_phone_2', __( 'phone_2' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_address_ro', __( 'address_ro' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_address_ru', __( 'address_ru' ) )
+		                                         ->set_width( 50 ),
 		                                    Field::make( 'text', 'crb_facebook', __( 'facebook' ) )
-		                                         ->set_width( 30 ),
-		                                    Field::make( 'text', 'crb_twitter', __( 'twitter' ) )
-		                                         ->set_width( 30 ),
-		                                    Field::make( 'text', 'crb_linkedin', __( 'linkedin' ) )
-		                                         ->set_width( 30 ),
-		                                    Field::make( 'text', 'crb_link', __( 'link' ) )
-		                                         ->set_width( 30 ),
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_vk', __( 'vk' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_hours_ro', __( 'hours_ro' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_hours_ru', __( 'hours_ru' ) )
+		                                         ->set_width( 50 ),
+		                                    Field::make( 'text', 'crb_mail', __( 'mail' ) )
+		                                         ->set_width( 50 ),
 	                                    ) );
 
 	// Add second options page under 'Basic Options'
 	Container::make( 'theme_options', 'Blocks' )
 	         ->set_page_parent( $basic_options_container )// reference to a top level container
 	         ->add_tab( __( 'Testimonials' ), array(
-			Field::make('complex', 'crb_numbers_fields', __('Fields'))
-			     ->add_fields(array(
+			Field::make( 'complex', 'crb_numbers_fields', __( 'Fields' ) )
+			     ->add_fields( array(
 				     Field::make( 'image', 'crb_testimonials_icon', __( 'crb_testimonials_icon' ) )
-				          ->set_value_type('url'),
+				          ->set_value_type( 'url' ),
 
 				     Field::make( 'text', 'crb_testimonials_title_ro', __( 'crb_testimonials_title_ro' ) )
 				          ->set_width( 50 ),
@@ -41,8 +49,8 @@ function crb_attach_theme_options() {
 				          ->set_width( 50 ),
 				     Field::make( 'text', 'crb_testimonials_text_ru', __( 'crb_testimonials_text_ru' ) )
 				          ->set_width( 50 ),
-			     ))
-			     ->set_layout('tabbed-horizontal')
+			     ) )
+			     ->set_layout( 'tabbed-horizontal' )
 		) );
 	// Add second options page under 'Basic Options'
 	Container::make( 'theme_options', 'Translates' )
@@ -52,7 +60,68 @@ function crb_attach_theme_options() {
 			     ->set_width( 50 ),
 			Field::make( 'text', 'crb_read_more_ru', __( 'crb_read_more_ru' ) )
 			     ->set_width( 50 ),
-		) );
+
+			Field::make( 'text', 'crb_to_the_main_ro', __( 'crb_to_the_main_ro' ) )
+			     ->set_width( 50 ),
+			Field::make( 'text', 'crb_to_the_main_ru', __( 'crb_to_the_main_ru' ) )
+			     ->set_width( 50 ),
+
+			Field::make( 'text', 'crb_error_ro', __( 'crb_error_ro' ) )
+			     ->set_width( 50 ),
+			Field::make( 'text', 'crb_error_ru', __( 'crb_error_ru' ) )
+			     ->set_width( 50 ),
+		) )
+	         ->add_tab( __( 'Products block' ), array(
+		         Field::make( 'text', 'crb_products_block_subtitle_ro', __( 'crb_products_block_subtitle_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_products_block_subtitle_ru', __( 'crb_products_block_subtitle_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_products_block_title_ro', __( 'crb_products_block_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_products_block_title_ru', __( 'crb_products_block_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_products_specifications_ro', __( 'crb_products_specifications_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_products_specifications_ru', __( 'crb_products_specifications_ru' ) )
+		              ->set_width( 50 ),
+
+	         ) )
+	         ->add_tab( __( 'Popup form' ), array(
+		         Field::make( 'text', 'crb_popup_subtitle_ro', __( 'crb_popup_subtitle_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_popup_subtitle_ru', __( 'crb_popup_subtitle_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_popup_title_ro', __( 'crb_popup_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_popup_title_ru', __( 'crb_popup_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_popup_btn_ro', __( 'crb_popup_btn_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_popup_btn_ru', __( 'crb_popup_btn_ru' ) )
+		              ->set_width( 50 ),
+
+	         ) )
+	         ->add_tab( __( 'Footer' ), array(
+		         Field::make( 'textarea', 'crb_footer_text_ro', __( 'crb_footer_text_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'textarea', 'crb_footer_text_ru', __( 'crb_footer_text_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_footer_location_ro', __( 'crb_footer_location_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_footer_location_ru', __( 'crb_footer_location_ru' ) )
+		              ->set_width( 50 ),
+	         ) )
+	         ->add_tab( __( 'Copyright' ), array(
+		         Field::make( 'text', 'crb_copyright_ro', __( 'crb_copyright_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_copyright_ru', __( 'crb_copyright_ru' ) )
+		              ->set_width( 50 ),
+	         ) );
 
 }
 

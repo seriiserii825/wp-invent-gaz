@@ -8,6 +8,7 @@ require_once __DIR__.'/inc/bs-styles.php';
 require_once __DIR__.'/inc/bs-setup.php';
 require_once __DIR__.'/inc/bs-widgets.php';
 require_once __DIR__.'/inc/bs-post-type.php';
+require_once __DIR__.'/inc/bs-post-taxonomy.php';
 require_once __DIR__.'/inc/carbon-fields/cb.php';
 require_once __DIR__.'/inc/carbon-fields/cb-post-type.php';
 require_once __DIR__.'/inc/carbon-fields/cb-post.php';

@@ -1,39 +1,47 @@
+<?php require __DIR__.'/template-parts/show-popup.php';?>
 <footer class="main-footer">
     <div class="container">
         <div class="main-footer__wrap">
             <div class="main-footer__item">
-                <header class="main-footer__header"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/logo-white.svg" alt=""></a>
+                <header class="main-footer__header">
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/logo-white.svg" alt=""></a>
                 </header>
-                <p> Contoarele de gaze sunt împărțite în mod convențional în uz casnic, utilitar și industrial, în
-                    funcție de capacitatea lor . Există multe variante de pasaje ale Lorem Ipsum disponibile, dar
-                    majoritatea au suferit modificări .</p>
+                <p><?php echo carbon_get_theme_option('crb_footer_text'.get_lang()); ?></p>
                 <ul class="main-footer__socials">
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/facebook-white.svg" alt=""></a></li>
-                    <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/vk-white.svg" alt=""></a></li>
+                    <li><a href="<?php echo carbon_get_theme_option('crb_facebook'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/facebook-white.svg" alt=""></a></li>
+                    <li><a href="<?php echo carbon_get_theme_option('crb_vk'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/vk-white.svg" alt=""></a></li>
                 </ul>
             </div>
             <div class="main-footer__item">
                 <header class="main-footer__header">
-                    <h3 class="main-footer__title"> Contacte</h3>
+                    <h3 class="main-footer__title"><?php echo get_the_title(18); ?></h3>
                 </header>
                 <ul>
-                    <li><a href="tel:069 76 9999"> 069 76 9999 </a></li>
-                    <li><a href="tel:069 77 4968"> 069 77 4968 </a></li>
-                    <li><span> Chișinău, str . Uzinelor 11 / 1 </span></li>
-                    <li><a href="mailto:invent-in@rambler.ru"> invent - in@rambler . ru </a></li>
-                    <li><span> Luni până sâmbătă: 9: 00 - 18: 00 </span></li>
+                    <?php
+                        $phone_1 = carbon_get_theme_option('crb_phone_1');
+                        $phone_1_clear = clear_phone($phone_1);
+                        $phone_2 = carbon_get_theme_option('crb_phone_2');
+                        $phone_2_clear = clear_phone($phone_2);
+                    ?>
+                    <li><a href="tel:<?php echo $phone_1_clear; ?>"><?php echo $phone_1; ?></a></li>
+                    <li><a href="tel:<?php echo $phone_2_clear; ?>"><?php echo $phone_2; ?></a></li>
+                    <li><span><?php echo carbon_get_theme_option('crb_address'.get_lang()); ?></span></li>
+                    <li><a href="mailto:invent-in@rambler.ru"><?php echo carbon_get_theme_option('crb_mail'); ?></a></li>
+                    <li><span><?php echo carbon_get_theme_option('crb_hours'.get_lang()); ?></span></li>
                 </ul>
             </div>
             <div class="main-footer__item">
                 <header class="main-footer__header">
-                    <h3 class="main-footer__title"> Locatie</h3>
+                    <h3 class="main-footer__title"><?php echo carbon_get_theme_option('crb_footer_location'.get_lang()); ?></h3>
                 </header>
-                <div class="map"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/map.jpg"></div>
+                <div class="map">
+                    <iframe width="100%" height="260" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.2209457416443!2d28.870090315462665!3d47.01626793656354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c0d711c125f%3A0xc4ac363bea126a9c!2zU3RyYWRhIFV6aW5lbG9yIDExLCBDaGnImWluxIN1LCDQnNC-0LvQtNCw0LLQuNGP!5e0!3m2!1sru!2s!4v1575297305926!5m2!1sru!2s" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
             </div>
         </div>
     </div>
 </footer>
-<div class="copyright"><span> © 2019 Industry . All rights reserved .</span></div>
+<div class="copyright"><span><?php echo carbon_get_theme_option('crb_copyright'.get_lang()); ?></span></div>
 <div class="overlay" id="js-overlay"></div>
 <div class="popup" id="js-popup">
     <div class="popup-wrap">

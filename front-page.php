@@ -37,7 +37,7 @@
     </div>
 <?php endif; ?>
 
-<?php $single_post = new WP_Query( 'p=34' ); ?>
+<?php $single_post = new WP_Query( ['page_id' => 8] ); ?>
 <?php if ( $single_post->have_posts() ): ?>
 	<?php $single_post->the_post(); ?>
     <div class="section single-post section--pb0">
@@ -45,8 +45,8 @@
             <div class="single-post__wrap">
                 <div class="single-post__item">
                     <header class="section__header">
-                        <h3 class="section__subtitle"><?php echo carbon_get_the_post_meta('crb_single_post_title'.get_lang()); ?></h3>
-                        <h2 class="section__title"><?php the_title(); ?></h2>
+                        <h3 class="section__subtitle"><?php echo carbon_get_the_post_meta('crb_single_post_subtitle'.get_lang()); ?></h3>
+                        <h2 class="section__title"><?php echo carbon_get_the_post_meta('crb_single_post_title'.get_lang()); ?></h2>
                     </header>
                     <div class="single-post__content">
                         <?php echo wpautop( carbon_get_the_post_meta( 'crb_single_post_text'.get_lang() ) ); ?>
@@ -63,73 +63,39 @@
 	<?php wp_reset_postdata(); ?>
 <?php endif; ?>
 
-<?php $testimonials = carbon_get_theme_option('crb_numbers_fields'); ?>
-
-<?php if($testimonials): ?>
-<section class="section testimonials">
-    <div class="container">
-        <div class="testimonials__content">
-            <?php foreach($testimonials as $item): ?>
-                <div class="testimonials__item"><div class="testimonials__img"><img src="<?php echo $item['crb_testimonials_icon']; ?>" alt=""></div>
-                    <h3 class="testimonials__title"><?php echo $item['crb_testimonials_title'.get_lang()]; ?></h3>
-                    <p class="testimonials__text"><?php echo $item['crb_testimonials_text'.get_lang()]; ?></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
-
+<?php require __DIR__.'/template-parts/testimonials.php';?>
 
 <section class="section products">
     <div class="container">
         <header class="section__header section__header--center">
-            <h3 class="section__subtitle"> Produsele noastre </h3>
-            <h2 class="section__title"> Inovație pentru a lua produsele </h2>
+            <h3 class="section__subtitle"><?php echo carbon_get_theme_option('crb_products_block_subtitle'.get_lang()); ?></h3>
+            <h2 class="section__title"><?php echo carbon_get_theme_option('crb_products_block_title'.get_lang()); ?></h2>
         </header>
         <div class="products__wrap">
-            <div class="products__item">
-                <div class="products__img"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/i/products/1.jpg" alt=""></div>
-                <h3 class="products__subtitle"> Convertor electronic </h3>
-                <h2 class="products__title"> Corector DTC 20 B </h2><a class="btn btn--white btn--small"
-                                                                       href="product.html"> Mai multe </a>
-            </div>
-            <div class="products__item">
-                <div class="products__img"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/i/products/2.jpg" alt=""></div>
-                <h3 class="products__subtitle"> Convertor electronic </h3>
-                <h2 class="products__title"> Corector DTC 20 B </h2><a class="btn btn--white btn--small"
-                                                                       href="product.html"> Mai multe </a>
-            </div>
-            <div class="products__item">
-                <div class="products__img"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/i/products/3.jpg" alt=""></div>
-                <h3 class="products__subtitle"> Convertor electronic </h3>
-                <h2 class="products__title"> Corector DTC 20 B </h2><a class="btn btn--white btn--small"
-                                                                       href="product.html"> Mai multe </a>
-            </div>
-            <div class="products__item">
-                <div class="products__img"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/i/products/4.jpg" alt=""></div>
-                <h3 class="products__subtitle"> Convertor electronic </h3>
-                <h2 class="products__title"> Corector DTC 20 B </h2><a class="btn btn--white btn--small"
-                                                                       href="product.html"> Mai multe </a>
-            </div>
+            <?php $products = new WP_Query([
+                'post_type' => 'product',
+                'posts_per_page' => 4
+            ]); ?>
+            <?php if($products->have_posts()): ?>
+            	<?php while($products->have_posts()): ?>
+            		<?php $products->the_post(); ?>
+                    <?php
+                        $terms = get_the_terms(get_the_ID(), 'type');
+                    ?>
+
+                    <div class="products__item">
+                        <div class="products__img"><?php echo kama_thumb_img('w=200'); ?></div>
+                        <h3 class="products__subtitle"><?php echo $terms[0]->name; ?></h3>
+                        <h2 class="products__title"><?php the_title(); ?></h2>
+                        <a class="btn btn--white btn--small" href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option('crb_read_more'.get_lang()); ?></a>
+                    </div>
+	            <?php endwhile; ?>
+            	<?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+
         </div>
-        <a class="btn btn--center" href="product.html"> Mai multe </a>
+        <a class="btn btn--center" href="<?php echo get_the_permalink(56); ?>"> <?php echo carbon_get_theme_option('crb_read_more'.get_lang()); ?> </a>
     </div>
 </section>
-<div class="show-popup">
-    <div class="container">
-        <div class="show-popup__wrap">
-            <div class="show-popup__item">
-                <h2 class="show-popup__title"> Comandați un contor </h2>
-                <h3 class="show-popup__subtitle"> Cum să alegeți și să cumpărați un contor de gaz adecvat </h3>
-            </div>
-            <div class="show-popup__item"><a class="btn btn--on-dark" href="#" id="js-show-popup"> Faceți o comandă </a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?php get_footer(); ?>

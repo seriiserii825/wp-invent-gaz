@@ -25,3 +25,28 @@ function crb_attach_slider_options() {
 
 		) );
 }
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_product_options' );
+function crb_attach_product_options() {
+	Container::make( 'post_meta', __( 'Fields' ) )
+	         ->where( 'post_type', '=', 'product' )
+	         ->add_fields( array(
+		         Field::make( 'text', 'crb_product_type_ro', __( 'Tip contor ro' ) )
+		              ->set_width(50),
+		         Field::make( 'text', 'crb_product_type_ru', __( 'Tip contor ru' ) )
+		              ->set_width(50),
+
+		         Field::make( 'text', 'crb_minimum_measured_ro', __( 'Cheltuiala minimă măsurată ro' ) )
+		              ->set_width(50),
+		         Field::make( 'text', 'crb_minimum_measured_ru', __( 'Cheltuiala minimă măsurată ru' ) )
+		              ->set_width(50),
+
+		         Field::make( 'text', 'crb_maximum_flow', __( 'Fluxul măsurat maxim' ) ),
+		         Field::make( 'text', 'crb_maximum_pressure', __( 'Presiunea maximă de lucru' ) ),
+		         Field::make( 'text', 'crb_diametre', __( 'Diametrul nominal' ) ),
+		         Field::make( 'text', 'crb_center_distance', __( 'Distanța de centru' ) ),
+		         Field::make( 'text', 'crb_interaction_interval', __( 'Interval de interacțiune' ) ),
+		         Field::make( 'text', 'crb_duration', __( 'Durata de viață' ) ),
+		         Field::make( 'text', 'crb_dimensions', __( 'Dimensiuni' ) ),
+	         ) );
+}

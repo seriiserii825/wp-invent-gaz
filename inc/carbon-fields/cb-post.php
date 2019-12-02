@@ -11,8 +11,13 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_single_post_options' );
 function crb_attach_single_post_options() {
 	Container::make( 'post_meta', __( 'Single post' ) )
-	         ->where( 'post_id', '=', 34 )
+	         ->where( 'post_id', '=', 8 )
 	         ->add_fields( array(
+		         Field::make( 'text', 'crb_single_post_subtitle_ro', __( 'Subtitle ro' ) )
+		              ->set_width(50),
+		         Field::make( 'text', 'crb_single_post_subtitle_ru', __( 'Subtitle ru' ) )
+		              ->set_width(50),
+
 		         Field::make( 'text', 'crb_single_post_title_ro', __( 'Title ro' ) )
 		              ->set_width(50),
 		         Field::make( 'text', 'crb_single_post_title_ru', __( 'Title ru' ) )

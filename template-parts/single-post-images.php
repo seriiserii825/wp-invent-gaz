@@ -1,4 +1,6 @@
 <div class="single-post__images">
-	<img src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-1.jpg" alt="">
-	<img src="<?php echo get_template_directory_uri(); ?>/assets/i/single-post-2.jpg" alt="">
+    <?php $single_post_images = carbon_get_post_meta(34, 'crb_single_post_gallery'); ?>
+    <?php foreach($single_post_images as $image): ?>
+        <?php echo kama_thumb_img('w=476 &h=367', $image); ?>
+    <?php endforeach; ?>
 </div>

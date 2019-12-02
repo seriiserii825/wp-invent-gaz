@@ -963,6 +963,9 @@ a:visited {
   right: 0;
 }
 
+.page-intro .breadcrumbs a:visited {
+	color: white;
+}
 .single-product {
   padding: 80px 0;
 }

@@ -68,7 +68,7 @@ get_header();
                     </div>
                 </div>
                 <div class="single-product__text">
-                    <h2 class="single-product__title">Specificații tehnice</h2>
+                    <h2 class="single-product__title"><?php echo carbon_get_theme_option('crb_products_specifications'.get_lang()); ?></h2>
                     <div class="single-product__column">
 						<?php the_content(); ?>
                     </div>
