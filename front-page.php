@@ -1,3 +1,8 @@
+<?php
+/*
+ * Template Name: Principala
+ */
+?>
 <?php get_header(); ?>
 <div class="slider" id="js-slider">
     <div class="slider-button slider-button__left"><img src="<?php echo get_template_directory_uri(); ?>/assets/i/arrow-left.svg"></div>

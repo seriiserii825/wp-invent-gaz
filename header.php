@@ -1,8 +1,3 @@
-<?php
-/*
- * Template Name: Главная
- */
-?>
 <?php if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -28,12 +23,25 @@
                     <div class="sandwitch__line sandwitch__line--bottom"></div>
                 </div>
             </div>
-            <ul class="main-menu" id="js-main-menu">
-                <li class="current-menu-item"><a href="about.html"> Despre noi </a></li>
-                <li><a href="products.html"> Produse</a></li>
-                <li><a href="check-page.html"> Contra status </a></li>
-                <li><a href="contacts.html"> Contacte</a></li>
-            </ul>
+            <?php wp_nav_menu( [
+            	'theme_location'  => '',
+            	'menu'            => '',
+            	'container'       => '',
+            	'container_class' => '',
+            	'container_id'    => '',
+            	'menu_class'      => 'main-menu',
+            	'menu_id'         => 'js-main-menu',
+            	'echo'            => true,
+            	'fallback_cb'     => 'wp_page_menu',
+            	'before'          => '',
+            	'after'           => '',
+            	'link_before'     => '',
+            	'link_after'      => '',
+            	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            	'depth'           => 0,
+            	'walker'          => '',
+            ] ); ?>
+
             <div class="wpglobus-lang">
 				<?php if ( ! dynamic_sidebar( 'language' ) ): ?>
                     <h3 style="color: red;">Language</h3>
