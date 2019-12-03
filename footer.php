@@ -17,12 +17,12 @@
                     <h3 class="main-footer__title"><?php echo get_the_title(18); ?></h3>
                 </header>
                 <ul>
-                    <?php
-                        $phone_1 = carbon_get_theme_option('crb_phone_1');
-                        $phone_1_clear = clear_phone($phone_1);
-                        $phone_2 = carbon_get_theme_option('crb_phone_2');
-                        $phone_2_clear = clear_phone($phone_2);
-                    ?>
+	                <?php
+	                $phone_1 = carbon_get_theme_option('crb_phone_1');
+	                $phone_1_clear = clear_phone($phone_1);
+	                $phone_2 = carbon_get_theme_option('crb_phone_2');
+	                $phone_2_clear = clear_phone($phone_2);
+	                ?>
                     <li><a href="tel:<?php echo $phone_1_clear; ?>"><?php echo $phone_1; ?></a></li>
                     <li><a href="tel:<?php echo $phone_2_clear; ?>"><?php echo $phone_2; ?></a></li>
                     <li><span><?php echo carbon_get_theme_option('crb_address'.get_lang()); ?></span></li>
@@ -48,18 +48,13 @@
         <div class="close-popup" id="js-close-popup"></div>
         <div class="form">
             <header class="section__header">
-                <h2 class="section__title"> Trimite un mesaj </h2>
+                <h2 class="section__title"><?php echo carbon_get_theme_option('crb_form_title'.get_lang()); ?></h2>
             </header>
-            <div class="form-group-grid">
-                <input type="text" name="your-name" placeholder="Nume">
-                <input type="text" name="your-surname" placeholder="Prenume">
-            </div>
-            <div class="form-group-grid">
-                <input type="tel" name="your-phone" placeholder="Telefon">
-                <input type="email" name="your-email" placeholder="Email">
-            </div>
-            <textarea name="message"></textarea>
-            <input class="btn" type="submit">
+	        <?php if(get_lang() == '_ru'): ?>
+		        <?php echo do_shortcode('[contact-form-7 id="60" title="Контактная форма rus"]'); ?>
+	        <?php else: ?>
+		        <?php echo do_shortcode('[contact-form-7 id="61" title="Form ro"]'); ?>
+	        <?php endif; ?>
         </div>
     </div>
 </div>

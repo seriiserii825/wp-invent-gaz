@@ -50,3 +50,13 @@ function crb_attach_product_options() {
 		         Field::make( 'text', 'crb_dimensions', __( 'Dimensiuni' ) ),
 	         ) );
 }
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_contor_options' );
+function crb_attach_contor_options() {
+	Container::make( 'post_meta', __( 'Fields' ) )
+	         ->where( 'post_type', '=', 'contor' )
+	         ->add_fields( array(
+		         Field::make( 'text', 'crb_beneficiar', 'crb_beneficiar '),
+		         Field::make( 'text', 'crb_contor_status', 'crb_contor_status '),
+	         ) );
+}

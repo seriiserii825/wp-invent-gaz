@@ -3,6 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+require_once __DIR__.'/inc/variables.php';
 require_once __DIR__.'/inc/func.php';
 require_once __DIR__.'/inc/bs-styles.php';
 require_once __DIR__.'/inc/bs-setup.php';

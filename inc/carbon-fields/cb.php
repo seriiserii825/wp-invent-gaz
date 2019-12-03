@@ -12,9 +12,11 @@ function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Carbon Fields' ) )
 	                                    ->add_tab( __( 'Contacts' ), array(
 		                                    Field::make( 'text', 'crb_phone_1', __( 'phone_1' ) )
-		                                         ->set_width( 50 ),
+		                                         ->set_width( 30 ),
 		                                    Field::make( 'text', 'crb_phone_2', __( 'phone_2' ) )
-		                                         ->set_width( 50 ),
+		                                         ->set_width( 30 ),
+		                                    Field::make( 'text', 'crb_phone_3', __( 'phone_3' ) )
+		                                         ->set_width( 30 ),
 		                                    Field::make( 'text', 'crb_address_ro', __( 'address_ro' ) )
 		                                         ->set_width( 50 ),
 		                                    Field::make( 'text', 'crb_address_ru', __( 'address_ru' ) )
@@ -121,6 +123,89 @@ function crb_attach_theme_options() {
 		              ->set_width( 50 ),
 		         Field::make( 'text', 'crb_copyright_ru', __( 'crb_copyright_ru' ) )
 		              ->set_width( 50 ),
+	         ) )
+	         ->add_tab( __( 'Detalies contacts' ), array(
+		         Field::make( 'text', 'crb_detalies_title_ro', __( 'crb_detalies_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_detalies_title_ru', __( 'crb_detalies_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_detalies_text_ro', __( 'crb_detalies_text_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_detalies_text_ru', __( 'crb_detalies_text_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_form_title_ro', __( 'crb_form_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_form_title_ru', __( 'crb_form_title_ru' ) )
+		              ->set_width( 50 ),
+	         ) )
+	         ->add_tab( __( 'Contra status' ), array(
+		         Field::make( 'text', 'crb_status_title_ro', __( 'crb_status_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_title_ru', __( 'crb_status_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_form_title_ro', __( 'crb_status_form_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_form_title_ru', __( 'crb_status_form_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_form_placeholder_ro', __( 'crb_status_form_placeholder_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_form_placeholder_ru', __( 'crb_status_form_placeholder_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_company_ro', __( 'crb_status_company_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_company_ru', __( 'crb_status_company_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_name_ro', __( 'crb_status_name_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_name_ru', __( 'crb_status_name_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_contor_ro', __( 'crb_status_contor_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_contor_ru', __( 'crb_status_contor_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_contor_status_ro', __( 'crb_status_contor_status_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_contor_status_ru', __( 'crb_status_contor_status_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_number_ro', __( 'crb_status_number_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_number_ru', __( 'crb_status_number_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_status_ro', __( 'crb_status_status_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_status_ru', __( 'crb_status_status_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_find_ro', __( 'crb_status_find_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_find_ru', __( 'crb_status_find_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_done_ro', __( 'crb_status_done_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_done_ru', __( 'crb_status_done_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_wait_ro', __( 'crb_status_wait_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_wait_ru', __( 'crb_status_wait_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'text', 'crb_status_bad_ro', __( 'crb_status_bad_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_status_bad_ru', __( 'crb_status_bad_ru' ) )
+		              ->set_width( 50 ),
+
 	         ) );
 
 }

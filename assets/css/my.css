@@ -1244,13 +1244,17 @@ textarea {
   }
 }
 
-.check-page__form input {
+.check-page__form input [type="text"] {
   width: 502px;
   height: 48px;
   line-height: 48px;
   text-indent: 15px;
   background: white;
   border: none;
+}
+
+.check-page__form input[type="submit"] {
+  background: #3865be;
 }
 
 @media screen and (max-width: 992px) {
@@ -1314,6 +1318,9 @@ textarea {
 .check-block__img {
   text-align: center;
 }
+.check-block__img img {
+  width: 40px;
+}
 
 @media screen and (max-width: 992px) {
   .check-block__img {
@@ -1331,13 +1338,30 @@ textarea {
   transform: translate(-50%, -50%);
   display: none;
   padding: 40px;
-  width: 600px;
+  width: 920px;
   background: white;
   box-shadow: 2px 6px 20px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   overflow: hidden;
   z-index: 10001;
 }
+@media screen and (max-width: 960px) {
+  .popup {
+    width: 90%;
+  }
+  .popup .form-group-grid {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .popup .form-group-grid span {
+    display: block;
+    margin-bottom: 10px;
+	}
+  .popup .form-group-grid input {
+    width: 100%;
+	}
+}
+
 
 .overlay {
   position: fixed;
@@ -1412,4 +1436,12 @@ textarea {
 }
 .single-page img {
   margin-bottom: 30px;
+}
+.form br {
+  display: none;
+}
+#response {
+  margin: 0 auto;
+  width: 700px;
+  border: 1px solid red;
 }
