@@ -135,6 +135,10 @@ body.fixed {
   overflow: hidden;
   padding-right: 14px;
 }
+body.single-product {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 * {
   box-sizing: border-box;
