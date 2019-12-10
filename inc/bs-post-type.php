@@ -28,6 +28,7 @@
 			'capability_type' => 'post',
 			'has_archive' => true,
 			'hierarchical' => false,
+			'menu_icon' => 'dashicons-format-gallery',
 			'menu_position' => null,
 			'supports' => array('title', 'thumbnail')
 		));
@@ -55,6 +56,7 @@
 			'capability_type' => 'post',
 			'has_archive' => true,
 			'hierarchical' => false,
+			'menu_icon' => 'dashicons-cart',
 			'menu_position' => null,
 			'supports' => array('title', 'editor', 'thumbnail')
 		));
@@ -82,6 +84,7 @@
 			'capability_type' => 'post',
 			'has_archive' => true,
 			'hierarchical' => false,
+			'menu_icon' => 'dashicons-clock',
 			'menu_position' => null,
 			'supports' => array('title')
 		));

@@ -77,6 +77,23 @@ jQuery(document).ready(function($) {
 		});
 	};
 	activeMenuParent();
+
+	let productGallery = function () {
+		$('#js-single-product__gallery').magnificPopup({
+			delegate: 'a', // child items selector, by clicking on it popup will open
+			type: 'image',
+			gallery:{
+				enabled:true
+			},
+			// Delay in milliseconds before popup is removed
+			removalDelay: 300,
+
+			// Class that is added to popup wrapper and background
+			// make it unique to apply your CSS animations just to this exact popup
+			mainClass: 'mfp-fade'
+		});
+	};
+	productGallery();
 });
 
 

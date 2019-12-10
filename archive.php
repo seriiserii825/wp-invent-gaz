@@ -31,10 +31,15 @@ $term_obj = get_queried_object();
                 <header class="section__header section__header--center">
                     <h2 class="section__title"><?php echo $term_obj->name; ?></h2>
                 </header>
+	            <?php $products = new WP_Query( [
+		            'post_type'      => 'product',
+		            'type'           => $term_obj->slug,
+		            'posts_per_page' => -1
+	            ] ); ?>
                 <div class="products__wrap">
-					<?php if ( have_posts() ): ?>
-						<?php while ( have_posts() ): ?>
-							<?php the_post(); ?>
+					<?php if ( $products->have_posts() ): ?>
+						<?php while ( $products->have_posts() ): ?>
+							<?php $products->the_post(); ?>
 
                             <div class="products__item">
                                 <div class="products__img"><?php echo kama_thumb_img( 'w=200' ); ?></div>
