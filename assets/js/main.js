@@ -68,6 +68,15 @@ jQuery(document).ready(function($) {
 		$('.testimonials .testimonials__title').height(maxheight);
 	};
 	testimonialsHeight();
+
+	let activeMenuParent = function () {
+		$('#js-main-menu .sub-menu li').each(function () {
+			if($(this).hasClass('current-menu-item')){
+				$(this).closest('.menu-item-has-children').addClass('current-menu-item');
+			}
+		});
+	};
+	activeMenuParent();
 });
 
 

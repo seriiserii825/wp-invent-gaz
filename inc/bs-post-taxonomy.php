@@ -70,7 +70,7 @@ function create_taxonomy()
 		// 'show_in_menu'          => true, // равен аргументу show_ui
 		// 'show_tagcloud'         => true, // равен аргументу show_ui
 		// 'show_in_quick_edit'    => null, // равен аргументу show_ui
-		'hierarchical' => false,
+		'hierarchical' => true,
 
 		'rewrite' => true,
 		//'query_var'             => $taxonomy, // название параметра запроса
