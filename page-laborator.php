@@ -26,6 +26,12 @@ get_header();
                     </a>
                 </div>
                 <div class="laborator-intro__item">
+                    <h2 class="laborator-intro__title"><?php echo esc_html__( 'MOLDGAZ', 'bs-invent-gaz' ); ?></h2>
+                    <a target="_blank" href="https://www.moldovagaz.md/">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/i/moldgaz.jpg'; ?>" alt="">
+                    </a>
+                </div>
+                <div class="laborator-intro__item">
                     <h2 class="laborator-intro__title"><?php echo esc_html__( 'Etalonat de INM', 'bs-invent-gaz' ); ?></h2>
                     <a target="_blank" href="https://inm.md/rom">
                         <img src="<?php echo get_template_directory_uri() . '/assets/i/im.png'; ?>" alt="">
