@@ -1602,7 +1602,11 @@ h2.laborator__title a {
   border-bottom: 2px solid #f3f3f3;
 }
 .laborator-intro a {
-  display: block;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 .laborator-intro__item {
   flex: 0 0 300px;

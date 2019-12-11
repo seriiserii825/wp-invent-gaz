@@ -22,7 +22,7 @@ get_header();
                 <div class="laborator-intro__item">
                     <h2 class="laborator-intro__title"><?php echo esc_html__( 'Acreditat de MOLDAC', 'bs-invent-gaz' ); ?></h2>
                     <a target="_blank" href="http://www.acreditare.md/?l=ru">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/i/im2_ru.jpg'; ?>" alt="">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/i/moldac-logotype.jpg'; ?>" alt="">
                     </a>
                 </div>
                 <div class="laborator-intro__item">

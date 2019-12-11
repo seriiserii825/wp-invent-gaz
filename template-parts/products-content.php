@@ -36,8 +36,9 @@
                         <a href="<?php the_permalink(); ?>" class="products__item">
                             <div class="products__img"><?php echo kama_thumb_img( 'w=200' ); ?></div>
                             <h2 class="products__title"><?php the_title(); ?></h2>
-                            <a class="btn btn--white btn--small"
-                               href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?></a>
+                            <div class="btn btn--white btn--small">
+                                <?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?>
+                            </div>
                         </a>
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>
