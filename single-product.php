@@ -32,26 +32,27 @@ $term_link = get_term_link( $term_id, $taxonomy = 'type' );
 						<?php echo kama_thumb_img( 'w=396' ); ?>
 						<?php if ( carbon_get_the_post_meta( 'crb_product_gallery' ) ): ?>
                             <div class="single-product__gallery" id="js-single-product__gallery">
-                                <?php $gallery = carbon_get_the_post_meta( 'crb_product_gallery' ); ?>
+								<?php $gallery = carbon_get_the_post_meta( 'crb_product_gallery' ); ?>
 
-                                <?php foreach($gallery as $item): ?>
-                                    <a href="<?php echo wp_get_attachment_image_src($item, 'full')[0]; ?>" class="single-product__gallery">
-                                        <?php echo kama_thumb_img('w=140', $item); ?>
+								<?php foreach ( $gallery as $item ): ?>
+                                    <a href="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>"
+                                       class="single-product__gallery">
+										<?php echo kama_thumb_img( 'w=140', $item ); ?>
                                     </a>
-                                <?php endforeach; ?>
+								<?php endforeach; ?>
 
                             </div>
 						<?php endif; ?>
                     </div>
 
                     <div class="single-product__content">
-                        <h2 class="single-product__title"><?php echo esc_html__( 'Date tehnice', 'bs-invent-gaz' ); ?></h2>
+						<?php if ( carbon_get_the_post_meta( 'crb_product_full_text' . get_lang() ) ): ?>
+                            <h2 class="single-product__title"><?php echo esc_html__( 'Date tehnice', 'bs-invent-gaz' ); ?></h2>
 
-                        <div class="single-product__data">
-							<?php if ( carbon_get_the_post_meta( 'crb_product_full_text' . get_lang() ) ): ?>
+                            <div class="single-product__data">
 								<?php echo carbon_get_the_post_meta( 'crb_product_full_text' . get_lang() ); ?>
-							<?php endif; ?>
-                        </div>
+                            </div>
+						<?php endif; ?>
 
                     </div>
                 </div>
@@ -70,7 +71,7 @@ $term_link = get_term_link( $term_id, $taxonomy = 'type' );
                                 <span><?php echo get_the_title( $file['crb_file'] ); ?></span>
                                 <a class="single-product__file" target="_blank"
                                    href="<?php echo wp_get_attachment_url( $file['crb_file'] ); ?>">
-                                    <span><?php echo esc_html__( Descarca, 'bs-invent-gaz' ); ?></span>
+                                    <span><?php echo esc_html__( 'Descarca', 'bs-invent-gaz' ); ?></span>
                                     <img src="<?php echo get_template_directory_uri() . '/assets/i/file-pdf-regular.svg'; ?>"
                                          alt="">
                                 </a>

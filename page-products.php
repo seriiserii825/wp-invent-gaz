@@ -41,7 +41,7 @@ get_header();
 					<?php $products = new WP_Query( [
 						'post_type'      => 'product',
 						'type'           => $term->slug,
-						'posts_per_page' => 4
+						'posts_per_page' => -1
 					] ); ?>
 					<?php if ( $products->have_posts() ): ?>
 						<?php while ( $products->have_posts() ): ?>
@@ -50,12 +50,14 @@ get_header();
 							$terms = get_the_terms( get_the_ID(), 'type' );
 							?>
 
-                            <div class="products__item">
+                            <a href="<?php the_permalink(); ?>" class="products__item">
                                 <div class="products__img"><?php echo kama_thumb_img( 'w=200' ); ?></div>
                                 <h2 class="products__title"><?php the_title(); ?></h2>
-                                <a class="btn btn--white btn--small"
-                                   href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?></a>
-                            </div>
+                                <button class="btn btn--white btn--small">
+                                    <?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?>
+                                </button>
+                            </a>
+
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					<?php endif; ?>

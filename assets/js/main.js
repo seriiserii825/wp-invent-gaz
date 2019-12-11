@@ -94,6 +94,19 @@ jQuery(document).ready(function($) {
 		});
 	};
 	productGallery();
+
+	let equalProductTitle = function () {
+		let productTitleHeight = 0;
+
+		$('.products__wrap .products__title').each(function () {
+			if($(this).height() > productTitleHeight){
+				productTitleHeight = $(this).height();
+			}
+		});
+
+		$('.products__wrap .products__title').height(productTitleHeight);
+	};
+	equalProductTitle();
 });
 
 
