@@ -51,9 +51,9 @@ get_header();
 					beforeSend: function (xhr) {
 						filter.find('button').text('Searching...'); // changing the button label
 					},
-                    error: function(){
+					error: function () {
 						alert('ok');
-                    },
+					},
 					success: function (data) {
 						// filter.find('button').text('SEARCH'); // changing the button label back
 						$('.check-block').html(data); // insert data
@@ -97,13 +97,23 @@ get_header();
             <ul class="check-block__list">
                 <li>
                     <span class="check-block__title"><?php echo carbon_get_theme_option( 'crb_status_status' . get_lang() ); ?>:</span>
-                    <span class="check-block__value"><?php echo carbon_get_theme_option('crb_status_wait'.get_lang()); ?></span>
+                    <span class="check-block__value"><?php echo carbon_get_theme_option( 'crb_status_wait' . get_lang() ); ?></span>
                 </li>
             </ul>
             <div class="check-block__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/i/wait.svg" alt="">
             </div>
         </div>
+    </div>
+
+    <div class="status-gallery">
+		<?php $gallery = carbon_get_the_post_meta( 'crb_status_gallery' ); ?>
+
+		<?php foreach ( $gallery as $item ): ?>
+            <div class="status-gallery__item">
+				<?php echo kama_thumb_img( 'w=440', $item ); ?>
+            </div>
+		<?php endforeach; ?>
     </div>
 </div>
 <?php get_footer(); ?>

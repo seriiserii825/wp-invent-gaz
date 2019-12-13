@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function bs_invent_gaz_scripts() {
 	wp_enqueue_style( 'bs-invent-gaz-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bs-invent-gaz-css-style', get_template_directory_uri().'/assets/libs/magnific-popup/magnific-popup.css' );
-	wp_enqueue_style( 'bs-invent-gaz-magnific-css', get_template_directory_uri().'/assets/css/my.css' );
+	wp_enqueue_style( 'bs-invent-gaz-magnific-style', get_template_directory_uri().'/assets/libs/magnific-popup/magnific-popup.css' );
+	wp_enqueue_style( 'bs-invent-gaz-css-css', get_template_directory_uri().'/assets/css/my.css' );
 
 	// Регистрация jQuery
 	add_action( 'wp_enqueue_scripts', 'jquery_script_method' );

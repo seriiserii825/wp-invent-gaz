@@ -21,14 +21,8 @@ get_header();
             <div class="laborator-intro">
                 <div class="laborator-intro__item">
                     <h2 class="laborator-intro__title"><?php echo esc_html__( 'Acreditat de MOLDAC', 'bs-invent-gaz' ); ?></h2>
-                    <a target="_blank" href="http://www.acreditare.md/?l=ru">
+                    <a target="_blank" href="http://www.acreditare.md/pageview.php?l=ro&idc=175&t=/Registre-OEC-Acreditate/Registre-OEC-acreditate/">
                         <img src="<?php echo get_template_directory_uri() . '/assets/i/moldac-logotype.jpg'; ?>" alt="">
-                    </a>
-                </div>
-                <div class="laborator-intro__item">
-                    <h2 class="laborator-intro__title"><?php echo esc_html__( 'MOLDGAZ', 'bs-invent-gaz' ); ?></h2>
-                    <a target="_blank" href="https://www.moldovagaz.md/">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/i/moldgaz.jpg'; ?>" alt="">
                     </a>
                 </div>
                 <div class="laborator-intro__item">

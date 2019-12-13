@@ -1626,3 +1626,26 @@ h2.laborator__title a {
   color: #515151;
   background: #dfebff;
 }
+.search-live div.search-live-results {
+  position: absolute !important;
+  top: 30px !important;
+  left: 0 !important;
+  background: white !important;
+  z-index: 1000 !important;
+}
+.status-gallery {
+  display: grid;
+	grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 970px;
+  margin: 60px auto 0;
+  height: 240px;
+  overflow: hidden;
+}
+.status-gallery__item img{
+  transform: scale(1);
+  transition: all .4s;
+}
+.status-gallery__item:hover img {
+  transform: scale(1.1);
+}

@@ -47,6 +47,9 @@
             	'depth'           => 0,
             	'walker'          => '',
             ] ); ?>
+            <?php if(!dynamic_sidebar('search')): ?>
+            <span>Search widget</span>
+            <?php endif; ?>
 
             <div class="wpglobus-lang">
 				<?php if ( ! dynamic_sidebar( 'language' ) ): ?>

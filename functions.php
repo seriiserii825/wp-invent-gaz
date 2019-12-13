@@ -13,6 +13,7 @@ require_once __DIR__.'/inc/bs-post-taxonomy.php';
 require_once __DIR__.'/inc/carbon-fields/cb.php';
 require_once __DIR__.'/inc/carbon-fields/cb-post-type.php';
 require_once __DIR__.'/inc/carbon-fields/cb-post.php';
+require_once __DIR__.'/inc/carbon-fields/cb-page.php';
 
 
 
