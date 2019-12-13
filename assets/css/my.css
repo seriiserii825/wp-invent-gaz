@@ -1030,9 +1030,17 @@ a:visited {
   border: 1px solid #F3F5F9;
 }
 .single-product__gallery {
+  position: relative;
   display: grid;
 	grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
+}
+.single-product__gallery img {
+  height: 140px;
+}
+.single-product__gallery span {
+  display: block;
+  text-align: center;
 }
 .single-product__gallery a {
   display: block;

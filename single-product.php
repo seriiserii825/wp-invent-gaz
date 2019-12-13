@@ -35,9 +35,9 @@ $term_link = get_term_link( $term_id, $taxonomy = 'type' );
 								<?php $gallery = carbon_get_the_post_meta( 'crb_product_gallery' ); ?>
 
 								<?php foreach ( $gallery as $item ): ?>
-                                    <a href="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>"
-                                       class="single-product__gallery">
+                                    <a href="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" class="single-product__gallery-item">
 										<?php echo kama_thumb_img( 'w=140', $item ); ?>
+                                        <span><?php echo get_the_title($item); ?></span>
                                     </a>
 								<?php endforeach; ?>
 
