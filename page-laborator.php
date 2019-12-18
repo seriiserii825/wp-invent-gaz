@@ -21,7 +21,8 @@ get_header();
             <div class="laborator-intro">
                 <div class="laborator-intro__item">
                     <h2 class="laborator-intro__title"><?php echo esc_html__( 'Acreditat de MOLDAC', 'bs-invent-gaz' ); ?></h2>
-                    <a target="_blank" href="http://www.acreditare.md/pageview.php?l=ro&idc=175&t=/Registre-OEC-Acreditate/Registre-OEC-acreditate/">
+                    <a target="_blank"
+                       href="http://www.acreditare.md/pageview.php?l=ro&idc=175&t=/Registre-OEC-Acreditate/Registre-OEC-acreditate/">
                         <img src="<?php echo get_template_directory_uri() . '/assets/i/moldac-logotype.jpg'; ?>" alt="">
                     </a>
                 </div>
@@ -31,6 +32,26 @@ get_header();
                         <img src="<?php echo get_template_directory_uri() . '/assets/i/im.png'; ?>" alt="">
                     </a>
                 </div>
+            </div>
+
+            <header class="laborator__header">
+                <h2 class="laborator__header-title">
+					<?php if ( have_posts() ): ?>
+						<?php the_post(); ?>
+						<?php the_content(); ?>
+						<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+                </h2>
+            </header>
+
+            <div class="laborator-info">
+                <?php $laborator_fields = carbon_get_theme_option('crb_laborator_fields'); ?>
+                <?php foreach($laborator_fields as $field): ?>
+                    <div class="laborator-info__item">
+                        <h3 class="laborator-info__title"><?php echo $field['title'.get_lang()]; ?></h3>
+                        <div class="laborator-info__text"><?php echo $field['text'.get_lang()]; ?></div>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="laborator__block">

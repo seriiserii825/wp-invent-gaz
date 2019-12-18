@@ -48,7 +48,6 @@ function crb_attach_theme_options() {
 			     ->set_width( 50 ),
 
 			Field::make( 'complex', 'crb_numbers_fields', __( 'Fields' ) )
-
 			     ->add_fields( array(
 				     Field::make( 'image', 'crb_testimonials_icon', __( 'crb_testimonials_icon' ) )
 				          ->set_value_type( 'url' ),
@@ -64,7 +63,28 @@ function crb_attach_theme_options() {
 				          ->set_width( 50 ),
 			     ) )
 			     ->set_layout( 'tabbed-horizontal' )
-		) );
+		) )
+	         ->add_tab( __( 'Laborator' ), array(
+		         Field::make( 'textarea', 'crb_laborator_header_title_ro', __( 'crb_laborator_header_title_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'textarea', 'crb_laborator_header_title_ru', __( 'crb_laborator_header_title_ru' ) )
+		              ->set_width( 50 ),
+
+		         Field::make( 'complex', 'crb_laborator_fields', __( 'Fields' ) )
+		              ->add_fields( array(
+			              Field::make( 'text', 'title_ro', __( 'title_ro' ) )
+			                   ->set_width( 50 ),
+			              Field::make( 'text', 'title_ru', __( 'title_ru' ) )
+			                   ->set_width( 50 ),
+
+			              Field::make( 'rich_text', 'text_ro', __( 'text_ro' ) )
+			                   ->set_width( 50 ),
+			              Field::make( 'rich_text', 'text_ru', __( 'text_ru' ) )
+			                   ->set_width( 50 ),
+		              ) )
+		              ->set_layout( 'tabbed-horizontal' )
+	         ) );
+
 	// Add second options page under 'Basic Options'
 	Container::make( 'theme_options', 'Translates' )
 	         ->set_page_parent( $basic_options_container )// reference to a top level container
