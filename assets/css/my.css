@@ -701,8 +701,8 @@ a:visited {
 ========================================*/
 .testimonials__content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
 }
 
 @media screen and (max-width: 992px) {
@@ -715,6 +715,11 @@ a:visited {
   .testimonials__content {
     display: block;
   }
+}
+.testimonials .section__subtitle {
+  margin: 0 auto 10px;
+  max-width: 600px;
+  line-height: 1.4;
 }
 
 .testimonials__item {
@@ -742,6 +747,8 @@ a:visited {
 
 .testimonials img {
   margin-bottom: 20px;
+  width: 65px;
+  height: 65px;
 }
 
 .testimonials__title {

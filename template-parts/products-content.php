@@ -34,7 +34,7 @@
 						<?php $products->the_post(); ?>
 
                         <a href="<?php the_permalink(); ?>" class="products__item">
-                            <div class="products__img"><?php echo kama_thumb_img( 'w=200' ); ?></div>
+                            <div class="products__img"><?php echo kama_thumb_img( 'w=400 &h=350' ); ?></div>
                             <h2 class="products__title"><?php the_title(); ?></h2>
                             <div class="btn btn--white btn--small">
                                 <?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?>

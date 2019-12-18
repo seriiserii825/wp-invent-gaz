@@ -29,7 +29,7 @@ $term_link = get_term_link( $term_id, $taxonomy = 'type' );
             <div class="container">
                 <div class="single-product__wrapper">
                     <div class="single-product__img">
-						<?php echo kama_thumb_img( 'w=396' ); ?>
+						<?php echo kama_thumb_img( 'w=396 &h=350' ); ?>
 						<?php if ( carbon_get_the_post_meta( 'crb_product_gallery' ) ): ?>
                             <div class="single-product__gallery" id="js-single-product__gallery">
 								<?php $gallery = carbon_get_the_post_meta( 'crb_product_gallery' ); ?>

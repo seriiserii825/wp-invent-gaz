@@ -37,7 +37,18 @@ function crb_attach_theme_options() {
 	Container::make( 'theme_options', 'Blocks' )
 	         ->set_page_parent( $basic_options_container )// reference to a top level container
 	         ->add_tab( __( 'Testimonials' ), array(
+			Field::make( 'text', 'crb_testimonial_title_ro', __( 'crb_testimonial_title_ro' ) )
+			     ->set_width( 50 ),
+			Field::make( 'text', 'crb_testimonial_title_ru', __( 'crb_testimonial_title_ru' ) )
+			     ->set_width( 50 ),
+
+			Field::make( 'textarea', 'crb_testimonial_text_ro', __( 'crb_testimonial_text_ro' ) )
+			     ->set_width( 50 ),
+			Field::make( 'textarea', 'crb_testimonial_text_ru', __( 'crb_testimonial_text_ru' ) )
+			     ->set_width( 50 ),
+
 			Field::make( 'complex', 'crb_numbers_fields', __( 'Fields' ) )
+
 			     ->add_fields( array(
 				     Field::make( 'image', 'crb_testimonials_icon', __( 'crb_testimonials_icon' ) )
 				          ->set_value_type( 'url' ),
