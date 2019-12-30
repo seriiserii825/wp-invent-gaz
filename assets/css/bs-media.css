@@ -1,0 +1,12 @@
+@media screen and (max-width: 472px) {
+	.main-header__content {
+		display: block;
+	}
+	.main-header__content .logo {
+		margin-bottom: 30px;
+	}
+
+	.main-header__content div.search-live {
+		right: 0;
+	}
+}
