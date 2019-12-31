@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<section class="section laborator">
+<section class="section laborator" style="background-image: url(<?php echo get_template_directory_uri().'/assets/i/gaz-bg.png'; ?>); background-size:cover; background-position: center;">
     <div class="container">
 
         <div class="laborator__block">

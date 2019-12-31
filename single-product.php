@@ -50,7 +50,7 @@ $term_link = get_term_link( $term_id, $taxonomy = 'type' );
                             <h2 class="single-product__title"><?php echo esc_html__( 'Date tehnice', 'bs-invent-gaz' ); ?></h2>
 
                             <div class="single-product__data">
-								<?php echo carbon_get_the_post_meta( 'crb_product_full_text' . get_lang() ); ?>
+                                <?php echo wpautop( carbon_get_the_post_meta( 'crb_product_full_text' . get_lang() ) ); ?>
                             </div>
 						<?php endif; ?>
 

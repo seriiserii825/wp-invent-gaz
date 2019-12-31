@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<section class="section products">
+<section class="section products" style="background-image: url(<?php echo get_template_directory_uri().'/assets/i/gaz-bg-25.png'; ?>); background-size:cover; background-position: center;">
     <div class="container">
 
         <div class="products__block">

@@ -794,10 +794,13 @@ a:visited {
   padding: 40px 20px;
   text-align: center;
   border: 1px solid #F3F5F9;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,.2);
   border-radius: 3px;
   transition: all .3s;
   cursor: pointer;
 }
+
 .products__item:hover {
 	box-shadow: 0 3px 15px rgba(0,0,0,.1);
 }
@@ -1095,7 +1098,7 @@ a:visited {
 }
 
 .single-product__text p,
-.single-product__data {
+.single-product__data p {
   margin-bottom: 10px;
   line-height: 1.7;
   color: #535353;
@@ -1619,6 +1622,10 @@ h2.laborator__title a:hover {
 }
 .laborator-single p {
 	color: #5A5A5A;
+}
+.laborator-single img {
+  display: inline-block;
+  text-align: left;
 }
 .laborator__item {
   position: relative;
