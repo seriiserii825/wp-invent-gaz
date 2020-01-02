@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<div class="page-intro"
-     style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/page-intro.jpg')">
+<div class="page-intro" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/page-intro.jpg')">
+
     <div class="container">
         <div class="page-intro__content">
             <h3 class="page-intro__title"><?php the_title(); ?></h3>
@@ -19,23 +19,25 @@ get_header();
             </ul>
         </div>
     </div>
+
 </div>
+
 <div class="check-page">
     <header class="section__header section__header--center">
         <h2 class="section__title"><?php echo carbon_get_theme_option( 'crb_status_title' . get_lang() ); ?></h2>
     </header>
 
-    <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter" class="check-page__form">
+    <form action="<?php echo site_url(); ?>/wp-admin/admin-ajax.php" method="POST" id="filter" class="check-page__form">
+
 		<?php wp_nonce_field( 'my_nonce' ); ?>
+
         <div class="check-page__form-item">
             <span><?php echo carbon_get_theme_option( 'crb_status_form_title' . get_lang() ); ?></span></div>
         <div class="check-page__form-item">
-            <input type="text" name="check"
-                   placeholder="<?php echo carbon_get_theme_option( 'crb_status_form_placeholder' . get_lang() ); ?>">
+            <input type="text" name="check" placeholder="<?php echo carbon_get_theme_option( 'crb_status_form_placeholder' . get_lang() ); ?>">
         </div>
         <div class="check-page__form-item">
-            <input type="submit" class="btn btn--small"
-                   value="<?php echo carbon_get_theme_option( 'crb_status_find' . get_lang() ); ?>"/>
+            <input type="submit" class="btn btn--small" value="<?php echo carbon_get_theme_option( 'crb_status_find' . get_lang() ); ?>"/>
         </div>
         <input type="hidden" name="action" value="myfilter">
     </form>
@@ -43,7 +45,9 @@ get_header();
     <script type="text/javascript">
 		jQuery(function ($) {
 			$('#filter').submit(function () {
+
 				var filter = $('#filter');
+
 				$.ajax({
 					url: filter.attr('action'),
 					data: filter.serialize(), // form data

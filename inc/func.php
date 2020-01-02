@@ -102,21 +102,17 @@ function video_filter_function() {
 		$check = $_POST['check'];
 
 		$args = array(
-			'post_type' => 'contor',
+			'post_type'      => 'contor',
+			'posts_per_page' => - 1
 		);
 
 		$query = new WP_Query( $args );
 
-		if ( $query->have_posts() ) :while ( $query->have_posts() ): $query->the_post(); ?>
+		if ( $query->have_posts() ) : while ( $query->have_posts() ): $query->the_post(); ?>
 			<?php $beneficiar = carbon_get_the_post_meta( 'crb_beneficiar' ); ?>
 			<?php $status = carbon_get_the_post_meta( 'crb_contor_status' ); ?>
-			<?php
-			?>
-			<?php if ( strpos( $beneficiar, $check ) !== false ): ?>
-				<?php $check = $beneficiar; ?>
-			<?php endif; ?>
 
-			<?php if ( $check == get_the_title() || $check == $beneficiar ): ?>
+			<?php if ( get_the_title() == $check || strpos( $beneficiar, $check ) !== false ): ?>
 
                 <div class="check-block__item">
                     <header class="check-block__header">
@@ -151,9 +147,9 @@ function video_filter_function() {
                         <li>
                             <span class="check-block__title"><?php echo carbon_get_theme_option( 'crb_status_status' . get_lang() ); ?>:</span>
 
-							<?php if ( $status == 'ok' ): ?>
+							<?php if ( $status == 'OK' ): ?>
                                 <span class="check-block__value"><?php echo carbon_get_theme_option( 'crb_status_done' . get_lang() ); ?></span>
-							<?php elseif ( $status == 'wait' ): ?>
+							<?php elseif ( $status == 'In Lucru' ): ?>
                                 <span class="check-block__value"><?php echo carbon_get_theme_option( 'crb_status_wait' . get_lang() ); ?></span>
 							<?php else: ?>
                                 <span class="check-block__value"><?php echo carbon_get_theme_option( 'crb_status_bad' . get_lang() ); ?></span>
@@ -161,9 +157,9 @@ function video_filter_function() {
                         </li>
                     </ul>
                     <div class="check-block__img">
-						<?php if ( $status == 'ok' ): ?>
+						<?php if ( $status == 'OK' ): ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/i/checked.svg" alt="">
-						<?php elseif ( $status == 'wait' ): ?>
+						<?php elseif ( $status == 'In Lucru' ): ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/i/wait.svg" alt="">
 						<?php else: ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/i/error.svg" alt="">
@@ -172,7 +168,8 @@ function video_filter_function() {
                 </div>
 
 			<?php else: ?>
-
+                <h3><?php echo carbon_get_theme_option( 'crb_enter_another_data' . get_lang() ); ?></h3>
+				<?php break; ?>
 			<?php endif; ?>
 		<?php
 		endwhile;

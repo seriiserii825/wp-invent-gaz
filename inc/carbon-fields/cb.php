@@ -237,6 +237,11 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_status_bad_ru', __( 'crb_status_bad_ru' ) )
 		              ->set_width( 50 ),
 
+		         Field::make( 'text', 'crb_enter_another_data_ro', __( 'crb_enter_another_data_ro' ) )
+		              ->set_width( 50 ),
+		         Field::make( 'text', 'crb_enter_another_data_ru', __( 'crb_enter_another_data_ru' ) )
+		              ->set_width( 50 ),
+
 	         ) );
 
 }
